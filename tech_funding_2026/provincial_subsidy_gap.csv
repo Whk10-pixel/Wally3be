@@ -1,0 +1,9 @@
+region_en,region_zh,role,subsidy_rmb_tn,status,notes
+Beijing–Tianjin–Hebei (Jing-Jin-Ji),京津冀,International S&T center,NA,unpublished,"Provincial/regional subsidy RMB totals are NOT in official gov.cn / MOST / CAC / NDRC Outline releases crawled 2026-09-03. Null is a documentation gap, not a zero subsidy."
+Yangtze River Delta,长三角,International S&T center,NA,unpublished,"Provincial/regional subsidy RMB totals are NOT in official releases crawled 2026-09-03. Null is a gap, not zero."
+Guangdong–Hong Kong–Macao Greater Bay Area,粤港澳大湾区,International S&T center,NA,unpublished,"Provincial/regional subsidy RMB totals are NOT in official releases crawled 2026-09-03. Null is a gap, not zero."
+Chengdu–Chongqing,成渝,Regional S&T hub,NA,unpublished,Named in MOST 15th FYP line. No subsidy RMB total in crawled releases.
+Wuhan,武汉,Regional S&T hub,NA,unpublished,Named in extracted targets. No subsidy RMB total in crawled releases.
+Xi'an,西安,Regional S&T hub,NA,unpublished,Named in extracted targets. No subsidy RMB total in crawled releases.
+Other provinces / qualified regions,其他有条件地区,Low-latency compute; first-mover pilots; 首台套 application,NA,unpublished,Local instruments are named without a province-by-province RMB table. Do not invent voucher or matching-fund totals.
+All-province aggregate of local S&T subsidies,地方科技投入合计,Local fiscal S&T / matching funds,NA,unpublished,"No national aggregate of provincial S&T subsidies appears in the crawled Outline / MOST / CAC releases. Null is a gap, not zero."

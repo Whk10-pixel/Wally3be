@@ -1,0 +1,15 @@
+instrument_id,instrument_en,instrument_zh,layer,presence_central,presence_cofunded,presence_local,rmb_total_tn,rmb_status,source,notes
+national_major_st_projects,National major S&T projects,国家重大科技项目,central,1,0,0,NA,unpublished,MOST; Outline,Central instrument. No RMB line item in crawled releases.
+nsfc_original_disruptive,NSFC original / disruptive share,国家自然科学基金（原创/颠覆）,central,1,0,0,NA,unpublished,MOST,Central instrument (NSFC). No RMB total in crawled releases.
+national_labs_infra,National labs and major infrastructure,国家实验室与重大科技基础设施,central,1,0,0,NA,unpublished,MOST; Outline,Central instrument. No RMB total in crawled releases.
+national_hub_compute_edwc,National hub compute / East-Data-West-Computing,国家枢纽算力 / 东数西算,central,1,0,0,NA,unpublished,CAC; Outline ch.12,National hub layout. Contrast with local low-latency compute; no RMB total published.
+central_fiscal_st_basic_strategic,Central fiscal S&T on basic + strategic tasks,中央财政科技（基础+战略）,central,1,0,0,NA,unpublished,Outline (improve central fiscal S&T allocation),Central fiscal allocation. No RMB total in crawled releases.
+open_competition_awards_postsubsidy,Open competition / awards in lieu / post-subsidy,揭榜挂帅 / 以奖代补 / 后补助,central,1,0,0,NA,unpublished,Outline; MOST,Sourced as a central reform instrument. No RMB total published.
+rd_super_deduction,R&D super-deduction (tax),研发费用加计扣除,central,1,0,0,NA,unpublished,MOST (raise super-deduction to pull enterprise spending),"National tax lever, not a provincial grant. No fiscal-cost RMB in crawled releases."
+gov_purchase_of_compute,Government purchase of compute,算力政府采购,central,1,0,0,NA,unpublished,Outline ch.12; CAC,Procurement / leasing instrument. No RMB envelope published.
+central_local_cofunding,Central–local co-funding of major S&T tasks,央地投入共担（重大科技任务）,cofunded,1,1,1,NA,unpublished,Outline ch.9.2,"Explicit co-funding rule. Split of central vs local RMB is unpublished. Null is a gap, not zero."
+low_latency_compute_qualified_regions,Low-latency compute in qualified regions,有条件地区低时延算力,local,0,0,1,NA,unpublished,CAC funding notes; Outline ch.12 (hub vs edge),Local/regional complement to national hub compute. No provincial voucher RMB in CAC releases.
+intl_st_centers_jjj_yrd_gba,"Three international S&T centers (JJJ, YRD, GBA)",国际科技创新中心（京津冀/长三角/大湾区）,local,0,0,1,NA,unpublished,MOST 15th FYP line (block 3),"Regional centre designation, not a published subsidy total."
+regional_st_hubs_chengyu_wuhan_xian,"Regional S&T hubs: Chengdu-Chongqing, Wuhan, Xi'an",成渝 / 武汉 / 西安,local,0,0,1,NA,unpublished,MOST; extracted targets,Named regional centres. No city/province subsidy RMB published.
+local_first_mover_pilots,Local first-mover pilots,地方先行先试,local,0,0,1,NA,unpublished,MOST,"Pilot authority, not a published RMB envelope."
+first_of_kind_application,First-of-kind (首台套) application,首台套应用,local,0,0,1,NA,unpublished,Outline (首台套/首批次/首版次); extracted targets list under local,Application instrument. Extracted-targets table places it with local tools. No RMB total published.
