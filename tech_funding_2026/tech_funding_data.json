@@ -1,1 +1,535 @@
-LOAD_FROM_DISK
+{
+  "meta": {
+    "title": "China 15th FYP tech self-reliance — sourced funding signals",
+    "extracted_from": "/workspace/policy-briefs/04-extracted-targets-for-data-analyst.md",
+    "crawl_date": "2026-09-03",
+    "compiled_for": "Data Analyst workstream, tech_funding_2026.png",
+    "critical_constraint": "Provincial subsidy RMB totals are NOT in official gov.cn / MOST / CAC / NDRC Outline releases. Values are null. Do not treat null as zero.",
+    "price_basis_for_rd_envelope": "Official 15th FYP R&D growth rule is annual growth >7% at constant prices (indicative). Envelope compounds the 2025 MOST lower-bound baseline; it is not an official 2030 point estimate.",
+    "sources_overview": [
+      "MOST minister channel / work report, 2026-03-05 (2025 R&D, intensity, basic research)",
+      "NDRC 15th FYP Outline col.1 / ch.8.3 / ch.9.2 / ch.12 (growth rule, patents, digital-economy VA, co-funding, compute)",
+      "国发〔2025〕11号 via CAC (AI terminal/agent penetration waypoints)",
+      "CAC 2026-04-20 (5G base-station stock as of Feb 2026)"
+    ]
+  },
+  "national_series": [
+    {
+      "metric_id": "societal_rd",
+      "metric": "Societal R&D expenditure",
+      "year": 2025,
+      "value": 3.92,
+      "value_qualifier": "lower_bound_gt",
+      "unit": "RMB_tn",
+      "series_type": "sourced",
+      "is_official_point_estimate": false,
+      "official_wording": ">RMB 3.92 trillion (2025)",
+      "source": "MOST 2026-03-05; Outline col.1 #4",
+      "notes": "Treat 3.92 as a published lower bound, not a point estimate. Used as compounding start for the illustrative >7% envelope only."
+    },
+    {
+      "metric_id": "rd_intensity",
+      "metric": "R&D intensity (societal R&D / GDP)",
+      "year": 2025,
+      "value": 2.8,
+      "value_qualifier": "reported",
+      "unit": "percent_of_GDP",
+      "series_type": "sourced",
+      "is_official_point_estimate": true,
+      "official_wording": "2.8% (2025)",
+      "source": "MOST / MOF",
+      "notes": "Not restated as a 2030 point estimate in crawled releases."
+    },
+    {
+      "metric_id": "rd_intensity",
+      "metric": "R&D intensity (societal R&D / GDP)",
+      "year": 2030,
+      "value": null,
+      "value_qualifier": "unpublished",
+      "unit": "percent_of_GDP",
+      "series_type": "gap",
+      "is_official_point_estimate": false,
+      "official_wording": null,
+      "source": "MOST / MOF; Outline (no 2030 restatement)",
+      "notes": "2030 R&D intensity not published as a point estimate. Null is a gap, not zero."
+    },
+    {
+      "metric_id": "societal_rd_annual_growth_rule",
+      "metric": "Societal R&D annual growth (constant prices)",
+      "year": null,
+      "period": "2026-2030 (15th FYP)",
+      "value": 7.0,
+      "value_qualifier": "lower_bound_gt",
+      "unit": "percent_cagr_constant_prices",
+      "series_type": "sourced",
+      "is_official_point_estimate": false,
+      "official_wording": "annual growth >7% (constant prices), indicative",
+      "source": "Outline col.1 #4; MOST 2026-03-05",
+      "notes": "A growth-rate floor, not a 2030 R&D stock target. Any RMB path built from it is illustrative."
+    },
+    {
+      "metric_id": "basic_research",
+      "metric": "Basic research expenditure",
+      "year": 2025,
+      "value": 0.28,
+      "value_qualifier": "approximate",
+      "unit": "RMB_tn",
+      "series_type": "sourced",
+      "is_official_point_estimate": false,
+      "official_wording": "~RMB 280 billion (2025)",
+      "source": "MOST 2026-03-05; Outline ch.8.3",
+      "notes": "Approximate. 0.28 / 3.92 is ~7.14%, vs the separately reported 7.08% share — do not force-reconcile."
+    },
+    {
+      "metric_id": "basic_research_share",
+      "metric": "Basic research as share of societal R&D",
+      "year": 2025,
+      "value": 7.08,
+      "value_qualifier": "reported",
+      "unit": "percent_of_RD",
+      "series_type": "sourced",
+      "is_official_point_estimate": true,
+      "official_wording": "7.08% of R&D (2025); first time above 7%",
+      "source": "MOST 2026-03-05",
+      "notes": "Share, not an RMB total. 15th FYP says the share should rise clearly; no 2030 percentage published."
+    },
+    {
+      "metric_id": "basic_research",
+      "metric": "Basic research expenditure",
+      "year": 2030,
+      "value": null,
+      "value_qualifier": "unpublished",
+      "unit": "RMB_tn",
+      "series_type": "gap",
+      "is_official_point_estimate": false,
+      "official_wording": "share of R&D to rise clearly",
+      "source": "Outline ch.8.3",
+      "notes": "No 2030 RMB point estimate. Null is a gap, not zero."
+    },
+    {
+      "metric_id": "basic_research_share",
+      "metric": "Basic research as share of societal R&D",
+      "year": 2030,
+      "value": null,
+      "value_qualifier": "unpublished_qualitative_rise",
+      "unit": "percent_of_RD",
+      "series_type": "gap",
+      "is_official_point_estimate": false,
+      "official_wording": "share of R&D to rise clearly",
+      "source": "Outline ch.8.3; MOST",
+      "notes": "Qualitative direction only. Do not invent a 2030 share."
+    },
+    {
+      "metric_id": "other_rd_implied_residual",
+      "metric": "Implied non-basic R&D (residual)",
+      "year": 2025,
+      "value": 3.64,
+      "value_qualifier": "derived_residual",
+      "unit": "RMB_tn",
+      "series_type": "derived",
+      "is_official_point_estimate": false,
+      "official_wording": null,
+      "source": "Derived: 3.92 lower-bound societal R&D minus ~0.28 basic research",
+      "notes": "NOT independently sourced. Residual using a lower-bound minus an approximate. For Panel B composition only."
+    },
+    {
+      "metric_id": "digital_economy_core_va_gdp",
+      "metric": "Digital-economy core value added / GDP",
+      "year": 2024,
+      "value": 10.5,
+      "value_qualifier": "reported_starred",
+      "unit": "percent",
+      "series_type": "sourced",
+      "is_official_point_estimate": true,
+      "official_wording": "10.5% (2024*)",
+      "source": "Outline col.1 #6",
+      "notes": "Source table marks 2024 with an asterisk."
+    },
+    {
+      "metric_id": "digital_economy_core_va_gdp",
+      "metric": "Digital-economy core value added / GDP",
+      "year": 2030,
+      "value": 12.5,
+      "value_qualifier": "indicative_target",
+      "unit": "percent",
+      "series_type": "sourced",
+      "is_official_point_estimate": true,
+      "official_wording": "12.5% (2030, indicative)",
+      "source": "Outline col.1 #6",
+      "notes": "Indicative 15th FYP target."
+    },
+    {
+      "metric_id": "high_value_invention_patents_per_10k",
+      "metric": "High-value invention patents per 10k people",
+      "year": 2025,
+      "value": 16.0,
+      "value_qualifier": "reported",
+      "unit": "count_per_10k_people",
+      "series_type": "sourced",
+      "is_official_point_estimate": true,
+      "official_wording": "16 (2025)",
+      "source": "Outline col.1 #5",
+      "notes": null
+    },
+    {
+      "metric_id": "high_value_invention_patents_per_10k",
+      "metric": "High-value invention patents per 10k people",
+      "year": 2030,
+      "value": 22.0,
+      "value_qualifier": "lower_bound_gt",
+      "unit": "count_per_10k_people",
+      "series_type": "sourced",
+      "is_official_point_estimate": false,
+      "official_wording": ">22 (2030, indicative)",
+      "source": "Outline col.1 #5",
+      "notes": "Lower bound of an indicative target."
+    },
+    {
+      "metric_id": "ai_terminal_agent_penetration",
+      "metric": "AI terminal / agent penetration among new-gen terminals",
+      "year": 2027,
+      "value": 70.0,
+      "value_qualifier": "lower_bound_gt",
+      "unit": "percent",
+      "series_type": "sourced",
+      "is_official_point_estimate": false,
+      "official_wording": ">70% (2027)",
+      "source": "国发〔2025〕11号 (CAC)",
+      "notes": "Waypoint, not a funding total."
+    },
+    {
+      "metric_id": "ai_terminal_agent_penetration",
+      "metric": "AI terminal / agent penetration among new-gen terminals",
+      "year": 2030,
+      "value": 90.0,
+      "value_qualifier": "lower_bound_gt",
+      "unit": "percent",
+      "series_type": "sourced",
+      "is_official_point_estimate": false,
+      "official_wording": ">90% (2030)",
+      "source": "国发〔2025〕11号 (CAC)",
+      "notes": "Waypoint, not a funding total."
+    },
+    {
+      "metric_id": "fiveg_base_stations",
+      "metric": "5G base stations (stock)",
+      "year": 2026,
+      "period": "Feb 2026",
+      "value": 4.90,
+      "value_qualifier": "lower_bound_gt",
+      "unit": "million",
+      "series_type": "sourced",
+      "is_official_point_estimate": false,
+      "official_wording": ">4.90 million (Feb 2026)",
+      "source": "CAC 2026-04-20",
+      "notes": "Stock snapshot, not a 15th FYP 2030 target and not a funding total."
+    },
+    {
+      "metric_id": "national_compute_scale",
+      "metric": "National compute scale",
+      "year": 2026,
+      "value": null,
+      "value_qualifier": "qualitative_only",
+      "unit": null,
+      "series_type": "qualitative",
+      "is_official_point_estimate": false,
+      "official_wording": "global #2 (qualitative); integrated network + ultra-large clusters",
+      "source": "CAC; Outline ch.12",
+      "notes": "No published RMB or PFLOPS total in the extracted targets. Null is a gap, not zero."
+    }
+  ],
+  "illustrative_rd_envelope": [
+    {
+      "year": 2025,
+      "rd_tn_at_7pct_floor": 3.92,
+      "series_type": "sourced_baseline_used_as_compounding_start",
+      "is_official_point_estimate": false,
+      "notes": "2025 MOST lower bound (>3.92). Not compounded."
+    },
+    {
+      "year": 2026,
+      "rd_tn_at_7pct_floor": 4.1944,
+      "series_type": "illustrative_7pct_cagr_floor",
+      "is_official_point_estimate": false,
+      "notes": "3.92 × 1.07^1. Indicative projection, not an official point estimate."
+    },
+    {
+      "year": 2027,
+      "rd_tn_at_7pct_floor": 4.488008,
+      "series_type": "illustrative_7pct_cagr_floor",
+      "is_official_point_estimate": false,
+      "notes": "3.92 × 1.07^2. Indicative projection, not an official point estimate."
+    },
+    {
+      "year": 2028,
+      "rd_tn_at_7pct_floor": 4.80216856,
+      "series_type": "illustrative_7pct_cagr_floor",
+      "is_official_point_estimate": false,
+      "notes": "3.92 × 1.07^3. Indicative projection, not an official point estimate."
+    },
+    {
+      "year": 2029,
+      "rd_tn_at_7pct_floor": 5.1383203592,
+      "series_type": "illustrative_7pct_cagr_floor",
+      "is_official_point_estimate": false,
+      "notes": "3.92 × 1.07^4. Indicative projection, not an official point estimate."
+    },
+    {
+      "year": 2030,
+      "rd_tn_at_7pct_floor": 5.498002784344,
+      "series_type": "illustrative_7pct_cagr_floor",
+      "is_official_point_estimate": false,
+      "notes": "3.92 × 1.07^5 ≈ 5.50. 15th FYP language is >7%, so a realised path would lie on or above this floor if the rule binds. NOT an official 2030 point estimate."
+    }
+  ],
+  "central_vs_local_instruments": [
+    {
+      "instrument_id": "national_major_st_projects",
+      "instrument_en": "National major S&T projects",
+      "instrument_zh": "国家重大科技项目",
+      "layer": "central",
+      "presence_central": 1,
+      "presence_cofunded": 0,
+      "presence_local": 0,
+      "rmb_total_tn": null,
+      "rmb_status": "unpublished",
+      "source": "MOST; Outline",
+      "notes": "Central instrument. No RMB line item in crawled releases."
+    },
+    {
+      "instrument_id": "nsfc_original_disruptive",
+      "instrument_en": "NSFC original / disruptive share",
+      "instrument_zh": "国家自然科学基金（原创/颠覆）",
+      "layer": "central",
+      "presence_central": 1,
+      "presence_cofunded": 0,
+      "presence_local": 0,
+      "rmb_total_tn": null,
+      "rmb_status": "unpublished",
+      "source": "MOST",
+      "notes": "Central instrument (NSFC). No RMB total in crawled releases."
+    },
+    {
+      "instrument_id": "national_labs_infra",
+      "instrument_en": "National labs and major infrastructure",
+      "instrument_zh": "国家实验室与重大科技基础设施",
+      "layer": "central",
+      "presence_central": 1,
+      "presence_cofunded": 0,
+      "presence_local": 0,
+      "rmb_total_tn": null,
+      "rmb_status": "unpublished",
+      "source": "MOST; Outline",
+      "notes": "Central instrument. No RMB total in crawled releases."
+    },
+    {
+      "instrument_id": "national_hub_compute_edwc",
+      "instrument_en": "National hub compute / East-Data-West-Computing",
+      "instrument_zh": "国家枢纽算力 / 东数西算",
+      "layer": "central",
+      "presence_central": 1,
+      "presence_cofunded": 0,
+      "presence_local": 0,
+      "rmb_total_tn": null,
+      "rmb_status": "unpublished",
+      "source": "CAC; Outline ch.12",
+      "notes": "National hub layout. Contrast with local low-latency compute; no RMB total published."
+    },
+    {
+      "instrument_id": "central_fiscal_st_basic_strategic",
+      "instrument_en": "Central fiscal S&T on basic + strategic tasks",
+      "instrument_zh": "中央财政科技（基础+战略）",
+      "layer": "central",
+      "presence_central": 1,
+      "presence_cofunded": 0,
+      "presence_local": 0,
+      "rmb_total_tn": null,
+      "rmb_status": "unpublished",
+      "source": "Outline (improve central fiscal S&T allocation)",
+      "notes": "Central fiscal allocation. No RMB total in crawled releases."
+    },
+    {
+      "instrument_id": "open_competition_awards_postsubsidy",
+      "instrument_en": "Open competition / awards in lieu / post-subsidy",
+      "instrument_zh": "揭榜挂帅 / 以奖代补 / 后补助",
+      "layer": "central",
+      "presence_central": 1,
+      "presence_cofunded": 0,
+      "presence_local": 0,
+      "rmb_total_tn": null,
+      "rmb_status": "unpublished",
+      "source": "Outline; MOST",
+      "notes": "Sourced as a central reform instrument. No RMB total published."
+    },
+    {
+      "instrument_id": "rd_super_deduction",
+      "instrument_en": "R&D super-deduction (tax)",
+      "instrument_zh": "研发费用加计扣除",
+      "layer": "central",
+      "presence_central": 1,
+      "presence_cofunded": 0,
+      "presence_local": 0,
+      "rmb_total_tn": null,
+      "rmb_status": "unpublished",
+      "source": "MOST (raise super-deduction to pull enterprise spending)",
+      "notes": "National tax lever, not a provincial grant. No fiscal-cost RMB in crawled releases."
+    },
+    {
+      "instrument_id": "gov_purchase_of_compute",
+      "instrument_en": "Government purchase of compute",
+      "instrument_zh": "算力政府采购",
+      "layer": "central",
+      "presence_central": 1,
+      "presence_cofunded": 0,
+      "presence_local": 0,
+      "rmb_total_tn": null,
+      "rmb_status": "unpublished",
+      "source": "Outline ch.12; CAC",
+      "notes": "Procurement / leasing instrument. No RMB envelope published."
+    },
+    {
+      "instrument_id": "central_local_cofunding",
+      "instrument_en": "Central–local co-funding of major S&T tasks",
+      "instrument_zh": "央地投入共担（重大科技任务）",
+      "layer": "cofunded",
+      "presence_central": 1,
+      "presence_cofunded": 1,
+      "presence_local": 1,
+      "rmb_total_tn": null,
+      "rmb_status": "unpublished",
+      "source": "Outline ch.9.2",
+      "notes": "Explicit co-funding rule. Split of central vs local RMB is unpublished. Null is a gap, not zero."
+    },
+    {
+      "instrument_id": "low_latency_compute_qualified_regions",
+      "instrument_en": "Low-latency compute in qualified regions",
+      "instrument_zh": "有条件地区低时延算力",
+      "layer": "local",
+      "presence_central": 0,
+      "presence_cofunded": 0,
+      "presence_local": 1,
+      "rmb_total_tn": null,
+      "rmb_status": "unpublished",
+      "source": "CAC funding notes; Outline ch.12 (hub vs edge)",
+      "notes": "Local/regional complement to national hub compute. No provincial voucher RMB in CAC releases."
+    },
+    {
+      "instrument_id": "intl_st_centers_jjj_yrd_gba",
+      "instrument_en": "Three international S&T centers (JJJ, YRD, GBA)",
+      "instrument_zh": "国际科技创新中心（京津冀/长三角/大湾区）",
+      "layer": "local",
+      "presence_central": 0,
+      "presence_cofunded": 0,
+      "presence_local": 1,
+      "rmb_total_tn": null,
+      "rmb_status": "unpublished",
+      "source": "MOST 15th FYP line (block 3)",
+      "notes": "Regional centre designation, not a published subsidy total."
+    },
+    {
+      "instrument_id": "regional_st_hubs_chengyu_wuhan_xian",
+      "instrument_en": "Regional S&T hubs: Chengdu-Chongqing, Wuhan, Xi'an",
+      "instrument_zh": "成渝 / 武汉 / 西安",
+      "layer": "local",
+      "presence_central": 0,
+      "presence_cofunded": 0,
+      "presence_local": 1,
+      "rmb_total_tn": null,
+      "rmb_status": "unpublished",
+      "source": "MOST; extracted targets",
+      "notes": "Named regional centres. No city/province subsidy RMB published."
+    },
+    {
+      "instrument_id": "local_first_mover_pilots",
+      "instrument_en": "Local first-mover pilots",
+      "instrument_zh": "地方先行先试",
+      "layer": "local",
+      "presence_central": 0,
+      "presence_cofunded": 0,
+      "presence_local": 1,
+      "rmb_total_tn": null,
+      "rmb_status": "unpublished",
+      "source": "MOST",
+      "notes": "Pilot authority, not a published RMB envelope."
+    },
+    {
+      "instrument_id": "first_of_kind_application",
+      "instrument_en": "First-of-kind (首台套) application",
+      "instrument_zh": "首台套应用",
+      "layer": "local",
+      "presence_central": 0,
+      "presence_cofunded": 0,
+      "presence_local": 1,
+      "rmb_total_tn": null,
+      "rmb_status": "unpublished",
+      "source": "Outline (首台套/首批次/首版次); extracted targets list under local",
+      "notes": "Application instrument. Extracted-targets table places it with local tools. No RMB total published."
+    }
+  ],
+  "provincial_subsidy_gap": [
+    {
+      "region_en": "Beijing–Tianjin–Hebei (Jing-Jin-Ji)",
+      "region_zh": "京津冀",
+      "role": "International S&T center",
+      "subsidy_rmb_tn": null,
+      "status": "unpublished",
+      "notes": "Provincial/regional subsidy RMB totals are NOT in official gov.cn / MOST / CAC / NDRC Outline releases crawled 2026-09-03. Null is a documentation gap, not a zero subsidy."
+    },
+    {
+      "region_en": "Yangtze River Delta",
+      "region_zh": "长三角",
+      "role": "International S&T center",
+      "subsidy_rmb_tn": null,
+      "status": "unpublished",
+      "notes": "Provincial/regional subsidy RMB totals are NOT in official releases crawled 2026-09-03. Null is a gap, not zero."
+    },
+    {
+      "region_en": "Guangdong–Hong Kong–Macao Greater Bay Area",
+      "region_zh": "粤港澳大湾区",
+      "role": "International S&T center",
+      "subsidy_rmb_tn": null,
+      "status": "unpublished",
+      "notes": "Provincial/regional subsidy RMB totals are NOT in official releases crawled 2026-09-03. Null is a gap, not zero."
+    },
+    {
+      "region_en": "Chengdu–Chongqing",
+      "region_zh": "成渝",
+      "role": "Regional S&T hub",
+      "subsidy_rmb_tn": null,
+      "status": "unpublished",
+      "notes": "Named in MOST 15th FYP line. No subsidy RMB total in crawled releases."
+    },
+    {
+      "region_en": "Wuhan",
+      "region_zh": "武汉",
+      "role": "Regional S&T hub",
+      "subsidy_rmb_tn": null,
+      "status": "unpublished",
+      "notes": "Named in extracted targets. No subsidy RMB total in crawled releases."
+    },
+    {
+      "region_en": "Xi'an",
+      "region_zh": "西安",
+      "role": "Regional S&T hub",
+      "subsidy_rmb_tn": null,
+      "status": "unpublished",
+      "notes": "Named in extracted targets. No subsidy RMB total in crawled releases."
+    },
+    {
+      "region_en": "Other provinces / qualified regions",
+      "region_zh": "其他有条件地区",
+      "role": "Low-latency compute; first-mover pilots; 首台套 application",
+      "subsidy_rmb_tn": null,
+      "status": "unpublished",
+      "notes": "Local instruments are named without a province-by-province RMB table. Do not invent voucher or matching-fund totals."
+    },
+    {
+      "region_en": "All-province aggregate of local S&T subsidies",
+      "region_zh": "地方科技投入合计",
+      "role": "Local fiscal S&T / matching funds",
+      "subsidy_rmb_tn": null,
+      "status": "unpublished",
+      "notes": "No national aggregate of provincial S&T subsidies appears in the crawled Outline / MOST / CAC releases. Null is a gap, not zero."
+    }
+  ]
+}
