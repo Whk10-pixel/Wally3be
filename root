@@ -1,0 +1,12 @@
+git switch -c chore/agent-workflow-setup
+
+node --version
+git status
+
+mkdir -p \
+  agent-skills \
+  .agents/skills \
+  .claude/skills \
+  .grok/skills \
+  docs/agent-evals \
+  artifacts/browser-proof
